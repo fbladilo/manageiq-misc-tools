@@ -8,9 +8,9 @@ spec:
       name: manageiq-backup
     spec:
       containers:
-      - name: miq-tools
-        image: docker.io/fbladilo/miq-tools:latest
-        command: ["/opt/manageiq/container-scripts/miq_db_backup"]
+      - name: postgresql
+        image: docker.io/fbladilo/miq-postgresql:latest
+        command: ["/opt/manageiq/container-scripts/backup_db"]
         env:
           -
             name: "DATABASE_URL"
